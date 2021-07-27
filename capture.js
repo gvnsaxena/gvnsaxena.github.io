@@ -28,7 +28,7 @@
       navigator.mediaDevices.getUserMedia({video: true})
       .then(function(stream) {
         video.srcObject = stream;
-        video.play();
+        //video.play();
       })
       .catch(function(err) {
         console.log("An error occurred: " + err);
