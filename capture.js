@@ -4,6 +4,17 @@
     let canvas = null;
     let photo = null;
     let startbutton = null;
+    let videoConstraints = {
+      video:{ 
+        facingMode: "environment",
+        width: { 
+          min: 1280,
+         },
+         height: {
+          min: 720,
+         },
+      }
+    };
   
     const startup = () => {
       video = document.getElementById('video');
@@ -11,7 +22,7 @@
       photo = document.getElementById('photo');
       startbutton = document.getElementById('startbutton');
   
-      navigator.mediaDevices.getUserMedia({video:{ facingMode: "environment"}})
+      navigator.mediaDevices.getUserMedia(videoConstraints)
       .then(function(stream) {
         video.srcObject = stream;
       })
